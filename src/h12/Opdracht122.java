@@ -1,0 +1,23 @@
+package h12;
+
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.peer.ButtonPeer;
+
+public class Opdracht122 extends Applet {
+
+    Button[] knop = new Button[25];
+
+    public void init() {
+
+        int teller;
+        for (teller = 0; teller < knop.length; teller++) {
+            knop[teller] = new Button("knop" + (teller + 1));
+            add(knop[teller]);
+        }
+    }
+
+    @Override
+    public void paint(Graphics g) {
+    }
+}
