@@ -2,7 +2,6 @@ package h12;
 
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.peer.ButtonPeer;
 
 public class Opdracht122 extends Applet {
 
