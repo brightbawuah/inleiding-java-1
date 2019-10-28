@@ -5,16 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.applet.*;
 
-public class Opdracht126 extends Applet {
+public class Opdracht125 extends Applet {
 
-    double[] getal = {0, 1, 1, 1, 2, 2, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 8, 8, 9, 9, 9, 10};
+    double[] getal = {0, 1, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6, 6, 7, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10};
     boolean gevonden;
-    int teller = 0;
-    String tekst = "";
-    TextField tekstvak = new TextField("typ getal", 20);
+    int index = -1;
+    String tekst = "Type iets";
+    TextField tekstvak = new TextField("", 20);
 
     public void init() {
         setSize(500, 500);
+        setBackground(Color.magenta);
         gevonden = false;
         tekstvak.addActionListener(new OkListener());
         add(tekstvak);
@@ -28,20 +29,21 @@ public class Opdracht126 extends Applet {
         public void actionPerformed(ActionEvent a) {
             int tempgetal = Integer.parseInt(tekstvak.getText());
             for(int i = 0; i < getal.length && gevonden == false; i++) {
+                index++;
                 if(tempgetal == getal[i]) {
-                    teller++;
+                    gevonden = true;
                 }
             }
-            if( teller > 0) {
-                tekst = "De waarde is " + teller + " keer gevonden";
+            if(gevonden == true) {
+                tekst = "Waarde " + tempgetal + " is gevonden " + index;
             }
             else {
-                tekst = "De waarde is niet gevonden";
+                tekst = "Waarde is niet gevonden";
             }
             repaint();
-            gevonden = false;
-            tekstvak.setText("");
-            teller = 0;
+            gevonden = false ;
+            index = -1;
+
         }
     }
 }

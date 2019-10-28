@@ -1,22 +1,17 @@
-package h12;
+package H12;
 
 import java.applet.Applet;
 import java.awt.*;
 
 public class Opdracht122 extends Applet {
-
     Button[] knop = new Button[25];
+
 
     public void init() {
 
-        int teller;
-        for (teller = 0; teller < knop.length; teller++) {
-            knop[teller] = new Button("knop" + (teller + 1));
-            add(knop[teller]);
+        for (int i = 0; i < knop.length; i++) {
+            knop[i] = new Button("knop " + (i + 1));
+            add(knop[i]);
         }
-    }
-
-    @Override
-    public void paint(Graphics g) {
     }
 }
